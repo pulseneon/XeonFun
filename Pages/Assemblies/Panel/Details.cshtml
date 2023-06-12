@@ -1,0 +1,97 @@
+﻿@page
+@model XeonFun.Pages.Assemblies.Panel.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Assembling</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.Desk)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.Desk)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.PhotoPath)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.PhotoPath)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.Motherboad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.Motherboad)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.MotherboardLink)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.MotherboardLink)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.Processor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.Processor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.ProcessorLink)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.ProcessorLink)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.Videocard)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.Videocard)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.VideocardLink)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.VideocardLink)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.Cooler)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.Cooler)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.RAM)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.RAM)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Assembling.ROM)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Assembling.ROM)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Assembling.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

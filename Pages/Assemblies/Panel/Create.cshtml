@@ -1,0 +1,94 @@
+﻿@page
+@model XeonFun.Pages.Assemblies.Panel.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Assembling</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Assembling.Title" class="control-label"></label>
+                <input asp-for="Assembling.Title" class="form-control" />
+                <span asp-validation-for="Assembling.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.Desk" class="control-label"></label>
+                <input asp-for="Assembling.Desk" class="form-control" />
+                <span asp-validation-for="Assembling.Desk" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.PhotoPath" class="control-label"></label>
+                <input asp-for="Assembling.PhotoPath" class="form-control" />
+                <span asp-validation-for="Assembling.PhotoPath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.Price" class="control-label"></label>
+                <input asp-for="Assembling.Price" class="form-control" />
+                <span asp-validation-for="Assembling.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.Motherboad" class="control-label"></label>
+                <input asp-for="Assembling.Motherboad" class="form-control" />
+                <span asp-validation-for="Assembling.Motherboad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.MotherboardLink" class="control-label"></label>
+                <input asp-for="Assembling.MotherboardLink" class="form-control" />
+                <span asp-validation-for="Assembling.MotherboardLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.Processor" class="control-label"></label>
+                <input asp-for="Assembling.Processor" class="form-control" />
+                <span asp-validation-for="Assembling.Processor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.ProcessorLink" class="control-label"></label>
+                <input asp-for="Assembling.ProcessorLink" class="form-control" />
+                <span asp-validation-for="Assembling.ProcessorLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.Videocard" class="control-label"></label>
+                <input asp-for="Assembling.Videocard" class="form-control" />
+                <span asp-validation-for="Assembling.Videocard" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.VideocardLink" class="control-label"></label>
+                <input asp-for="Assembling.VideocardLink" class="form-control" />
+                <span asp-validation-for="Assembling.VideocardLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.Cooler" class="control-label"></label>
+                <input asp-for="Assembling.Cooler" class="form-control" />
+                <span asp-validation-for="Assembling.Cooler" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.RAM" class="control-label"></label>
+                <input asp-for="Assembling.RAM" class="form-control" />
+                <span asp-validation-for="Assembling.RAM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Assembling.ROM" class="control-label"></label>
+                <input asp-for="Assembling.ROM" class="form-control" />
+                <span asp-validation-for="Assembling.ROM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

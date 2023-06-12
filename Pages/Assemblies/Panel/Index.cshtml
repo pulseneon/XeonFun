@@ -1,0 +1,108 @@
+﻿@page
+@model XeonFun.Pages.Assemblies.Panel.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].Desk)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].PhotoPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].Motherboad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].MotherboardLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].Processor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].ProcessorLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].Videocard)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].VideocardLink)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].Cooler)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].RAM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assembling[0].ROM)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Assembling) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desk)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhotoPath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motherboad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotherboardLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Processor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcessorLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Videocard)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VideocardLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cooler)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RAM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ROM)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

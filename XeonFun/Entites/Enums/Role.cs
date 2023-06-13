@@ -4,6 +4,7 @@
     {
         User,
         Manager,
+        Admin,
         Developer
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using XeonFun.Data;
+using XeonFun.Data.Repositories.Interface;
 using XeonFun.Entites.Models;
 using XeonFun.Entites.Requests;
 
@@ -13,26 +13,46 @@ namespace XeonFun.Services.Service
     {
         private readonly IUserRepository _userRepository;
         private readonly IConfiguration _configuration;
+        private readonly IMapper _mapper;
 
-        public UserService(IUserRepository repository, IConfiguration configuration)
+        public UserService(IUserRepository repository, IConfiguration configuration, IMapper mapper)
         {
             _userRepository = repository;
             _configuration = configuration;
+            _mapper = mapper;
+        }
+
+        public async Task<User> GetUser(int id)
+        {
+            var user = await _userRepository.GetUser(id);
+
+            return user;
+        }
+
+        public async Task<User> AddUser(RegisterRequest model)
+        {
+            var user = _mapper.Map<RegisterRequest, User>(model);
+
+            return await _userRepository.AddUser(user);
         }
 
         public async Task<AuthResponse> Authentcate(AuthRequest model)
         {
-            // var user = await _userRepository.GetUser(model.Login, model.Password);
+            var user = await _userRepository.GetUser(model.Login);
 
-            // test 
-            User user = new();
-            user.Id = 1;
-            user.Username = "pulseenepn";
+            if (user is null)
+            {
+                // todo: logging 
+                return null;
+            }
 
-            // if (user == null)
-            // {
-            // todo: user is null
-            // }
+            var verifyPassword = Utilities.PasswordHasher.VerifyPassword(model.Password, user.Password);
+
+            if (!verifyPassword)
+            {
+                // todo: logging 
+                return null;
+            }
 
             var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
 

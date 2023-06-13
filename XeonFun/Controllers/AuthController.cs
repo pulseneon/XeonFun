@@ -26,7 +26,7 @@ namespace XeonFun.Controllers
         [HttpPost]
         public async Task<AuthResponse> AuthAsync([FromBody] AuthRequest auth)
         {
-            AuthResponse response = new AuthResponse();
+            AuthResponse response = new();
 
             if (auth is not null)
             {
@@ -36,15 +36,14 @@ namespace XeonFun.Controllers
             return response;
         }
 
-        [Authorize]
-        [HttpGet]
-        public async void CheckValideToken()
-        {
-            //var id = context.User.FindFirst("Id");
-            //var login = context.User.FindFirst(ClaimTypes.Name);
-            //var city = context.User.FindFirst(ClaimTypes.Role);
-            Console.WriteLine("dfgdsgsdfg");
-            //Debug.WriteLine($"auth: {id} {login} {city}");
-        }
+        //[Authorize]
+        //[HttpGet]
+        //public async void CheckValideToken()
+        //{
+        //    ClaimsPrincipal currentUser = this.User;
+        //    var id = currentUser.FindFirst("Id");
+        //    //var login = context.User.FindFirst(ClaimTypes.Name);
+        //    Console.WriteLine($"dfgdsgsdfg {id}");
+        //}
     }
 }

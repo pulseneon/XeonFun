@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using XeonFun.Data;
-using XeonFun.Data.Repositories;
+using XeonFun.Data.Repositories.Interface;
+using XeonFun.Data.Repositories.Repository;
 using XeonFun.Mapper;
 using XeonFun.Services.Service;
 

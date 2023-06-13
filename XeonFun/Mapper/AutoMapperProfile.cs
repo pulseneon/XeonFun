@@ -1,9 +1,14 @@
 ﻿using AutoMapper;
+using XeonFun.Entites.Models;
+using XeonFun.Entites.Requests;
 
 namespace XeonFun.Mapper
 {
-    public class AutoMapperProfile
+    public class AutoMapperProfile: Profile
     {
-        public AutoMapperProfile() { }
+        public AutoMapperProfile()
+        {
+            CreateMap<RegisterRequest, User>();
+        }
     }
 }

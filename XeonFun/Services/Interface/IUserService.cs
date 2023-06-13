@@ -4,7 +4,7 @@ namespace XeonFun.Services.Interface
 {
     public interface IUserService
     {
-        Task<Register> Authentcate();
+        Task<ResponseResult> Register();
         Task<AuthResponse> Authentcate();
     }
 }

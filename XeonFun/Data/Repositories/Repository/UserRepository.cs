@@ -16,9 +16,9 @@ namespace XeonFun.Data.Repositories.Repository
             _mapper = mapper;
         }
 
-        public async Task<User> GetUser(string login) => await _context.Users.FirstOrDefaultAsync(x => x.Username == login);
+        public async Task<User> GetByLogin(string login) => await _context.Users.FirstOrDefaultAsync(x => x.Username == login);
 
-        public async Task<User> GetUser(int id) => await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
+        public async Task<User> GetById(int id) => await _context.Users.FirstOrDefaultAsync(x => x.Id == id);
 
         public async Task<User> AddUser(User user)
         {

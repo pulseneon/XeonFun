@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using XeonFun.Data;
@@ -11,9 +12,11 @@ using XeonFun.Data;
 namespace XeonFun.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20230613215536_Videocard")]
+    partial class Videocard
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -170,14 +173,8 @@ namespace XeonFun.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Orders")
-                        .HasColumnType("integer");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
-
-                    b.Property<int>("Stock")
-                        .HasColumnType("integer");
 
                     b.Property<int?>("Warranty")
                         .HasColumnType("integer");

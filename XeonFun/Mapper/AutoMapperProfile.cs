@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using XeonFun.Entites.Models;
+using XeonFun.Entites.Models.Products;
 using XeonFun.Entites.Requests;
 
 namespace XeonFun.Mapper
@@ -9,6 +10,7 @@ namespace XeonFun.Mapper
         public AutoMapperProfile()
         {
             CreateMap<RegisterRequest, User>();
+            CreateMap<VideocardRequest, Videocard>();
         }
     }
 }

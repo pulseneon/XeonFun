@@ -4,8 +4,8 @@ namespace XeonFun.Data.Repositories.Interface
 {
     public interface IUserRepository
     {
-        Task<User> GetUser(string login);
-        Task<User> GetUser(int id);
+        Task<User> GetByLogin(string login);
+        Task<User> GetById(int id);
         Task<User> AddUser(User user);
     }
 }

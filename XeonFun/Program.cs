@@ -39,7 +39,9 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IVideocardRepository, VideocardRepository>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<VideocardService>();
 builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .AddEnvironmentVariables();
 builder.Services.AddAuthorization();

@@ -6,10 +6,11 @@ using System.Text;
 using XeonFun.Data.Repositories.Interface;
 using XeonFun.Entites.Models;
 using XeonFun.Entites.Requests;
+using XeonFun.Services.Interface;
 
 namespace XeonFun.Services.Service
 {
-    public class UserService
+    public class UserService: IUserService
     {
         private readonly IUserRepository _userRepository;
         private readonly IConfiguration _configuration;
@@ -24,7 +25,7 @@ namespace XeonFun.Services.Service
 
         public async Task<User> GetUser(int id)
         {
-            var user = await _userRepository.GetUser(id);
+            var user = await _userRepository.GetById(id);
 
             return user;
         }
@@ -38,7 +39,7 @@ namespace XeonFun.Services.Service
 
         public async Task<AuthResponse> Authentcate(AuthRequest model)
         {
-            var user = await _userRepository.GetUser(model.Login);
+            var user = await _userRepository.GetByLogin(model.Login);
 
             if (user is null)
             {
